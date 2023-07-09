@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SmartphoneController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [SmartphoneController::class, 'index'])->name('smartphone.index');
+
+// Route::resource('smartphones', [SmartphoneController::class]);
+Route::get('/smartphones', [SmartphoneController::class, 'index'])->name('smartphones.index');
+Route::get('/saw', [SmartphoneController::class, 'calculateSAW'])->name('calculateSAW');
+
+Route::get('/hasil', [SmartphoneController::class, 'calculateRanking'])->name('calculate');
+
+
+Route::get('/smartphones/{id}/profile-matching', [SmartphoneController::class, 'calculateProfileMatching'])->name('smartphones.profile_matching');

@@ -3,7 +3,13 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\Weight;
+use App\Models\Smartphone;
+use App\Models\Standard;
 use Illuminate\Database\Seeder;
+use Database\Seeders\WeightSeeder;
+use Database\Seeders\SmartphoneSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -12,11 +18,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
-
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        $this->call(SmartphoneSeeder::class);
+        $this->call(WeightSeeder::class);
+        $this->call(StandardSeeder::class);
     }
 }
