@@ -6,7 +6,6 @@
         </p>
         <p class="mb-4">Silakan pilih metode yang ingin Anda gunakan:</p>
         <a href="{{ route('calculate') }}" class="btn btn-primary mb-3">Hitung Hasil</a>
-        <a href="{{ route('calculateSAW') }}" class="btn btn-primary mb-3">Hitung SAW</a>
         <table class="table table-striped">
             <thead>
                 <tr>
